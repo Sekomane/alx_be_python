@@ -14,21 +14,19 @@ def main():
         display_menu()
         choice = input("Enter your choice: ")
 
-        if choice == '1':
-            item = input("Enter item to add: ").strip()
-            if item:
-                shopping_list.append(item)
-                print(f"'{item}' has been added to your shopping list.")
-            else:
-                print("No item entered. Please try again.")
+      if choice == '1':
+    item = input("Enter the item to add: ")
+    shopping_list.append(item)
+    print(f"'{item}' has been added to your shopping list.")
 
-        elif choice == '2':
-            item = input("Enter item to remove: ").strip()
-            if item in shopping_list:
-                shopping_list.remove(item)
-                print(f"'{item}' has been removed from your shopping list.")
-            else:
-                print(f"'{item}' was not found in your shopping list.")
+elif choice == '2':
+    item = input("Enter the item to remove: ")
+    if item in shopping_list:
+        shopping_list.remove(item)
+        print(f"'{item}' has been removed from your shopping list.")
+    else:
+        print(f"'{item}' was not found in your shopping list.")
+
 
         elif choice == '3':
             if shopping_list:
@@ -47,4 +45,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
