@@ -1,27 +1,23 @@
-# temp_conversion_tool.py
+# explore_datetime.py
 
-FAHRENHEIT_TO_CELSIUS_FACTOR=5/9
-CELSIUS_TO_FAHRENHEIT_FACTOR=9/5
+from datetime import datetime, timedelta
 
-def convert_to_celsius(fahrenheit):
-    return (fahrenheit-32)*FAHRENHEIT_TO_CELSIUS_FACTOR
+def display_current_datetime():
+    current_date = datetime.now()
+    print("Current date and time:", current_date.strftime("%Y-%m-%d %H:%M:%S"))
 
-def convert_to_fahrenheit(celsius):
-    return celsius*CELSIUS_TO_FAHRENHEIT_FACTOR+32
+def calculate_future_date():
+    days_input = input("Enter the number of days to add to the current date: ")
+    try:
+        days = int(days_input)
+        future_date = datetime.now() + timedelta(days=days)
+        print("Future date:", future_date.strftime("%Y-%m-%d"))
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
 
 def main():
-    temp=input("Enter the temperature to convert: ")
-    unit=input("Is this temperature in Celsius or Fahrenheit? (C/F): ").upper()
-    try:
-        temp=float(temp)
-    except ValueError:
-        raise ValueError("Invalid temperature. Please enter a numeric value.")
-    if unit=="C":
-        print(f"{temp}°C is {convert_to_fahrenheit(temp)}°F")
-    elif unit=="F":
-        print(f"{temp}°F is {convert_to_celsius(temp)}°C")
-    else:
-        raise ValueError("Invalid unit. Please enter C or F.")
+    display_current_datetime()
+    calculate_future_date()
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
