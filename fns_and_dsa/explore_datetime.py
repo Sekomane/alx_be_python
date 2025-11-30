@@ -19,7 +19,7 @@ def main():
         return
 
     unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
-    
+
     if unit == "F":
         converted = convert_to_celsius(temp)
         print(f"{temp}°F is {converted}°C")
@@ -27,7 +27,7 @@ def main():
         converted = convert_to_fahrenheit(temp)
         print(f"{temp}°C is {converted}°F")
     else:
-        print("Invalid unit. Please enter 'C' for Celsius or 'F' for Fahrenheit.")
+        print("Invalid temperature. Please enter a numeric value.")
 
 if __name__ == "__main__":
     main()
